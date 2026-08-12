@@ -1,4 +1,4 @@
-# 6번의 게임 진행까지 구현된 코드
+# 7번의 파일 저장까지 구현된 코드
 import random
 import time
 from pygame import mixer
@@ -46,6 +46,11 @@ def scorePrint(correct, elapsed):
     # 게임 시작부터 종료까지 총 걸린 시간 및 맞춘 갯수 출력
     print(f"맞춘 개수: {correct} / 5")
     print(f"걸린 시간: {elapsed:.2f}초")
+
+    # 게임 결과를 파일에 누적 저장
+    with open("word_game_score.csv", "a", newline = "", encoding = "utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([f"{elapsed:.2f}", correct])
 
 if __name__ == "__main__":
     wordLoad()
