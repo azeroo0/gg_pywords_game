@@ -3,10 +3,6 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-# file save
-word_game_score.csv
-word_game_record.csv
-
 # C extensions
 *.so
 
